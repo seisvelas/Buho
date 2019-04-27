@@ -1,4 +1,4 @@
-This is a high level language with the flavor of an x86 assembly. Sample code:
+This is a high level language with the shape of an x86 assembly. Sample code:
 
 ```
 #lang reader "rosario.rkt"
