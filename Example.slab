@@ -1,7 +1,7 @@
-#lang reader "sex86.rkt"
+#lang reader "rosario.rkt"
 
 
-// countFive.sex
+// countFive.rose
 // loop through numbers 1..5
 
 
