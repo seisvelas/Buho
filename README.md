@@ -1,10 +1,10 @@
 This is a high level language with the flavor of an x86 assembly. Sample code:
 
 ```
-#lang reader "sex86.rkt"
+#lang reader "rosario.rkt"
 
 
-// countFive.sex
+// countFive.rose
 // loop through numbers 1..5
 
 
