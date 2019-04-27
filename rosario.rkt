@@ -58,7 +58,7 @@
   (define src-lines (port->lines port))
   (define src-datums
     (format-datums '~a src-lines))
-  (define module-datum `(module sex86-mod "sex86.rkt"
+  (define module-datum `(module rosario-mod "rosario.rkt"
                           ,@src-datums))
   (datum->syntax #f module-datum))
 (provide read-syntax)
