@@ -18,5 +18,5 @@ label @begin
   !=  var 5
 goto @begin
 
-// this program displays the numbers 1 through five successfully in Womb!
+// this program displays the numbers 1 through five successfully using Rosario!
 ```
