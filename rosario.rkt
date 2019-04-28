@@ -37,28 +37,42 @@
       (void)
       (let* [(current-line (first (get-line-of-code code line)))
              (command (first current-line))]
+        
         (cond [(eq? command 'hi) (begin (display (resolve (second current-line) variables))
                                         (interpret code variables (+ line 1)))]
+              
               [(eq? command '<-) (interpret code (cons (list (second current-line)
-                                                             (third current-line))
+                                                             (resolve (third current-line) variables))
                                                        variables) (+ line 1))]
+              
               [(eq? command '++) (interpret code (++ variables (second current-line)) (+ line 1))]
+              
               [(eq? command 'label) (interpret code (cons (list (second current-line)
                                                                 line)
                                                           variables) (+ line 1))]
+              
               [(eq? command '!=) (interpret code variables
                                             (if (eq? (resolve (second current-line) variables)
                                                      (resolve (third current-line) variables))
                                                 (+ line 2) ; if eq skip next line
                                                 (+ line 1)))]
+              
               [(eq? command 'goto) (interpret code variables (+ (found? (second current-line) variables) 1))]
+
+              [(eq? command '+=) (interpret code
+                                            (cons (list (second current-line)
+                                                        (+ (resolve (second current-line) variables)
+                                                           (resolve (third current-line) variables)))
+                                                  variables)
+                                            (+ 1 line))]
+              
               [else (interpret code variables (+ line 1))]))))
 
 (define (read-syntax path port)
   (define src-lines (port->lines port))
   (define src-datums
     (format-datums '~a src-lines))
-  (define module-datum `(module rosario-mod "rosario.rkt"
+  (define module-datum `(module sex86-mod "sex86.rkt"
                           ,@src-datums))
   (datum->syntax #f module-datum))
 (provide read-syntax)
