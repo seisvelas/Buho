@@ -72,14 +72,14 @@
   (define src-lines (port->lines port))
   (define src-datums
     (format-datums '~a src-lines))
-  (define module-datum `(module sex86-mod "sex86.rkt"
+  (define module-datum `(module rosario-mod "rosario.rkt"
                           ,@src-datums))
   (datum->syntax #f module-datum))
 (provide read-syntax)
 
 
 
-(define-macro (sex86-module-begin HANDLE-EXPR ...)
+(define-macro (rosario-module-begin HANDLE-EXPR ...)
   #'(#%module-begin
      (interpret (let ((code (filter (lambda (x) (not (void? x)))
                                     (list 'HANDLE-EXPR ...))))
@@ -87,4 +87,4 @@
                   (for/list ([i code]
                              [j (range (length code))])
                     (list i j))))))
-(provide (rename-out [sex86-module-begin #%module-begin]))
+(provide (rename-out [rosario-module-begin #%module-begin]))
