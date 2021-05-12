@@ -12,6 +12,6 @@ jobs:
       uses: seisvelas/checkout@v2
     - name: Scan comment
       id: scan
-      uses: actions/comment-email-address-alerts@v2 # Uses an action in the root directory
+      uses: seisvelas/comment-email-address-alerts@v3 # Uses an action in the root directory
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
