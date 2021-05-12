@@ -9,9 +9,9 @@ jobs:
     name: Check for emails in issue comments
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v2
     - name: Scan comment
       id: scan
-      uses: seisvelas/comment-email-address-alerts@v3 # Uses an action in the root directory
+      uses: seisvelas/comment-email-address-alerts@v4 # Uses an action in the root directory
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
