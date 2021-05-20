@@ -15,3 +15,4 @@ jobs:
       uses: seisvelas/comment-email-address-alerts@v2.4
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
+        exemptions: test,example.com,example.org
