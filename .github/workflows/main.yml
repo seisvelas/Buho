@@ -12,6 +12,6 @@ jobs:
       uses: actions/checkout@v2
     - name: Scan comment
       id: scan
-      uses: seisvelas/comment-email-address-alerts@v1.2
+      uses: seisvelas/comment-email-address-alerts@v2.1
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
